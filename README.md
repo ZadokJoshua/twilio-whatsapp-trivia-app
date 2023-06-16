@@ -1,1 +1,2 @@
-### Trivia Quiz WhatsApp bot with Twilio and ASP.NET Core
+## Trivia Quiz WhatsApp bot with Twilio and ASP.NET Core
+A trivia quiz application using Twilio for WhatsApp, ASP.NET Core, and [The Trivia API](https://the-trivia-api.com/) ([licensed under CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)).

@@ -9,6 +9,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromSeconds(40);
     options.Cookie.IsEssential = true;
 });
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<TriviaService>();
 
 var app = builder.Build();

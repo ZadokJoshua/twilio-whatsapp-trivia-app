@@ -6,11 +6,16 @@ namespace TwilioWhatsAppTriviaApp.Services;
 public class TriviaService
 {
     private const string TheTriviaApiUrl = @"https://the-trivia-api.com/api/questions?limit=3";
+    private HttpClient httpClient;
+
+    public TriviaService(HttpClient httpClient)
+    {
+        this.httpClient = httpClient;
+    }
 
     public async Task<IEnumerable<TriviaApiResponse>> GetTrivia()
     {
-        using var client = new HttpClient();
-        var response = await client.GetAsync(TheTriviaApiUrl);
+        var response = await httpClient.GetAsync(TheTriviaApiUrl);
         var triviaJson = await response.Content.ReadAsStringAsync();
         var trivia = JsonConvert.DeserializeObject<IEnumerable<TriviaApiResponse>>(triviaJson);
 

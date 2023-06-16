@@ -12,14 +12,16 @@ namespace WhatsappTrivia.Controllers;
 [ApiController]
 public class TriviaController : TwilioController
 {
-    private readonly TriviaService triviaService;
-    private readonly string[] StartCommands = { "START", "S" };
-    private readonly string[] OptionValues = { "A", "B", "C", "D" };
     private const string SessionKeyIsGameOn = "IsGameOn";
     private const string SessionKeyScore = "Score";
     private const string SessionKeyCurrentQuestionIndex = "CurrentQuestionIndex";
     private const string SessionKeyTotalQuestions = "TotalQuestions";
     private const string SessionKeyQuestions = "Questions";
+
+    private static readonly string[] StartCommands = { "START", "S" };
+    private static readonly string[] OptionValues = { "A", "B", "C", "D" };
+
+    private readonly TriviaService triviaService;
 
     public TriviaController(TriviaService triviaService)
     {
